@@ -6,568 +6,102 @@
     <title>Box Custom Premium - Pre Order</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --primary: #2c5530;
-            --secondary: #d4af37;
-            --light: #f8f9fa;
-            --dark: #343a40;
-            --accent: #e9ecef;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
+        :root { --primary: #2c5530; --secondary: #d4af37; --light: #f8f9fa; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--light); color: #333; line-height: 1.6; }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
         
         /* Header */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+        header { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
+        .logo { font-size: 24px; font-weight: 700; color: var(--primary); text-decoration: none; }
+        .logo i { margin-right: 10px; color: var(--secondary); }
         
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
+        /* Hero */
+        .hero { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1600952840455-8d57c3b561a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80'); background-size: cover; color: white; padding: 100px 0; text-align: center; }
+        .hero h1 { font-size: 48px; margin-bottom: 20px; }
+        .hero p { font-size: 20px; max-width: 700px; margin: 0 auto 30px; }
         
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo i {
-            margin-right: 10px;
-            color: var(--secondary);
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 30px;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-        
-        .cta-button {
-            background-color: var(--primary);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s;
-            display: inline-flex;
-            align-items: center;
-        }
-        
-        .cta-button:hover {
-            background-color: #1e3a22;
-        }
-        
-        .cta-button i {
-            margin-right: 8px;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1600952840455-8d57c3b561a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 100px 0;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        
-        .hero p {
-            font-size: 20px;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-        
-        /* Section Styles */
-        section {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-title h2 {
-            font-size: 36px;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-        
-        .section-title p {
-            color: #6c757d;
-            max-width: 700px;
-            margin: 0 auto;
-        }
+        /* Sections */
+        section { padding: 80px 0; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 36px; color: var(--primary); margin-bottom: 15px; }
         
         /* Services */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); padding: 30px; text-align: center; }
+        .service-card i { font-size: 50px; color: var(--primary); margin-bottom: 20px; }
         
-        .service-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .service-img {
-            height: 200px;
-            background-color: var(--accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-size: 50px;
-        }
-        
-        .service-content {
-            padding: 25px;
-        }
-        
-        .service-content h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-        
-        /* Florist Focus */
-        .florist-focus {
-            background-color: var(--accent);
-        }
-        
-        .florist-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-        
-        .florist-text {
-            flex: 1;
-        }
-        
-        .florist-image {
-            flex: 1;
-            height: 400px;
-            background-color: #ddd;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-size: 24px;
-        }
-        
-        /* Process */
-        .process-steps {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        
-        .step {
-            flex: 1;
-            min-width: 200px;
-            text-align: center;
-            padding: 30px 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        
-        .step-number {
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-weight: bold;
-            font-size: 20px;
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            background-color: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 80px 0;
-        }
-        
-        .cta-section h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-        
-        .cta-section p {
-            font-size: 18px;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-        
-        .whatsapp-button {
-            background-color: #25D366;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 18px;
-            display: inline-flex;
-            align-items: center;
-            transition: background-color 0.3s;
-        }
-        
-        .whatsapp-button:hover {
-            background-color: #128C7E;
-        }
-        
-        .whatsapp-button i {
-            margin-right: 10px;
-            font-size: 24px;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 60px 0 20px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-column h3 {
-            font-size: 20px;
-            margin-bottom: 20px;
-            color: var(--secondary);
-        }
-        
-        .footer-column p, .footer-column a {
-            color: #adb5bd;
-            margin-bottom: 10px;
-            display: block;
-            text-decoration: none;
-        }
-        
-        .footer-column a:hover {
-            color: white;
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #495057;
-            color: #adb5bd;
-        }
+        /* Buttons */
+        .whatsapp-button { background: #25D366; color: white; padding: 15px 30px; border-radius: 5px; text-decoration: none; font-weight: 600; font-size: 18px; display: inline-flex; align-items: center; }
+        .whatsapp-button:hover { background: #128C7E; }
+        .whatsapp-button i { margin-right: 10px; font-size: 24px; }
         
         /* Responsive */
         @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                padding: 15px 0;
-            }
-            
-            .nav-links {
-                margin-top: 15px;
-            }
-            
-            .nav-links li {
-                margin-left: 15px;
-                margin-right: 15px;
-            }
-            
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .hero p {
-                font-size: 18px;
-            }
-            
-            .florist-content {
-                flex-direction: column;
-            }
-            
-            .florist-image {
-                width: 100%;
-            }
+            .navbar { flex-direction: column; }
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 18px; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="#" class="logo">
-                    <i class="fas fa-box"></i>
-                    CustomBox Premium
-                </a>
-                <ul class="nav-links">
-                    <li><a href="#home">Beranda</a></li>
-                    <li><a href="#services">Layanan</a></li>
-                    <li><a href="#florist">Florist</a></li>
-                    <li><a href="#process">Proses</a></li>
-                    <li><a href="#contact">Kontak</a></li>
-                </ul>
-                <a href="https://wa.me/628974420966" class="cta-button">
-                    <i class="fab fa-whatsapp"></i>
-                    Pesan Sekarang
-                </a>
+                <a href="#" class="logo"><i class="fas fa-box"></i>CustomBox Premium</a>
+                <a href="https://wa.me/628974420966" class="whatsapp-button"><i class="fab fa-whatsapp"></i>Pesan Sekarang</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero">
         <div class="container">
-            <h1>Box Custom Premium untuk Kebutuhan Bisnis Anda</h1>
-            <p>Kami spesialis pembuatan box custom dengan bentuk dan jumlah yang dapat disesuaikan dengan kebutuhan Anda. Sistem pre order dengan fokus pada kepuasan pelanggan.</p>
-            <a href="https://wa.me/628974420966" class="whatsapp-button">
-                <i class="fab fa-whatsapp"></i>
-                Konsultasi via WhatsApp
-            </a>
+            <h1>Box Custom Premium untuk Florist</h1>
+            <p>Spesialis pembuatan box custom dengan bentuk dan jumlah sesuai kebutuhan. Sistem pre order dengan fokus pada kepuasan pelanggan florist.</p>
+            <a href="https://wa.me/628974420966" class="whatsapp-button"><i class="fab fa-whatsapp"></i>Konsultasi via WhatsApp 08974420966</a>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services">
+    <section>
         <div class="container">
             <div class="section-title">
                 <h2>Layanan Kami</h2>
-                <p>Kami menyediakan berbagai jenis box custom sesuai dengan kebutuhan bisnis Anda</p>
+                <p>Kami menyediakan berbagai jenis box custom sesuai kebutuhan bisnis Anda</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-img">
-                        <i class="fas fa-gift"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Box untuk Florist</h3>
-                        <p>Box khusus untuk pengiriman bunga dengan desain elegan yang meningkatkan nilai produk Anda. Telah digunakan oleh banyak florist ternama.</p>
-                    </div>
+                    <i class="fas fa-gift"></i>
+                    <h3>Box untuk Florist</h3>
+                    <p>Box khusus untuk pengiriman bunga dengan desain elegan yang meningkatkan nilai produk Anda.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-img">
-                        <i class="fas fa-box-open"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Box Produk Retail</h3>
-                        <p>Kemasan menarik untuk berbagai produk retail dengan branding yang kuat untuk meningkatkan daya tarik produk Anda.</p>
-                    </div>
+                    <i class="fas fa-box-open"></i>
+                    <h3>Box Produk Retail</h3>
+                    <p>Kemasan menarik untuk berbagai produk retail dengan branding yang kuat.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-img">
-                        <i class="fas fa-shopping-bag"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Box Hadiah Custom</h3>
-                        <p>Box hadiah dengan desain eksklusif untuk momen spesial, dapat disesuaikan dengan tema acara dan preferensi Anda.</p>
-                    </div>
+                    <i class="fas fa-shopping-bag"></i>
+                    <h3>Box Hadiah Custom</h3>
+                    <p>Box hadiah dengan desain eksklusif untuk momen spesial.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Florist Focus Section -->
-    <section class="florist-focus" id="florist">
-        <div class="container">
-            <div class="section-title">
-                <h2>Spesialis Box untuk Florist</h2>
-                <p>Kami telah berpengalaman melayani berbagai florist dengan produk box yang meningkatkan nilai jual bunga</p>
-            </div>
-            <div class="florist-content">
-                <div class="florist-text">
-                    <h3>Mengapa Florist Memilih Kami?</h3>
-                    <p>Selama bertahun-tahun, kami telah menjadi mitra terpercaya bagi banyak florist dalam menyediakan box custom yang tidak hanya fungsional tetapi juga meningkatkan estetika produk mereka.</p>
-                    <ul style="margin-top: 20px; margin-left: 20px;">
-                        <li>Desain elegan yang cocok untuk berbagai jenis bunga</li>
-                        <li>Material berkualitas yang melindungi bunga selama pengiriman</li>
-                        <li>Fleksibilitas ukuran dan bentuk sesuai kebutuhan</li>
-                        <li>Proses produksi cepat untuk memenuhi kebutuhan pre order</li>
-                        <li>Harga kompetitif dengan kualitas premium</li>
-                    </ul>
-                    <a href="https://wa.me/628974420966" class="cta-button" style="margin-top: 30px;">
-                        <i class="fab fa-whatsapp"></i>
-                        Konsultasi Kebutuhan Florist
-                    </a>
-                </div>
-                <div class="florist-image">
-                    [GALERI BOX UNTUK FLORIST]
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section -->
-    <section id="process">
-        <div class="container">
-            <div class="section-title">
-                <h2>Cara Memesan</h2>
-                <p>Proses pemesanan box custom yang mudah dan transparan</p>
-            </div>
-            <div class="process-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Konsultasi</h3>
-                    <p>Hubungi kami via WhatsApp untuk mendiskusikan kebutuhan box custom Anda</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Desain & Penawaran</h3>
-                    <p>Kami akan membuat desain dan memberikan penawaran harga sesuai kebutuhan</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Konfirmasi</h3>
-                    <p>Setelah desain disetujui, lakukan konfirmasi dan pembayaran DP</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Produksi & Pengiriman</h3>
-                    <p>Kami memproduksi box dan mengirimkannya sesuai jadwal yang disepakati</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section" id="contact">
-        <div class="container">
+    <section style="background: #f8f9fa;">
+        <div class="container" style="text-align: center;">
             <h2>Siap Meningkatkan Kemasan Produk Anda?</h2>
-            <p>Hubungi kami sekarang untuk konsultasi gratis dan dapatkan penawaran terbaik untuk box custom bisnis Anda</p>
-            <a href="https://wa.me/628974420966" class="whatsapp-button">
-                <i class="fab fa-whatsapp"></i>
-                WhatsApp: 0897-4420-966
-            </a>
+            <p style="margin: 20px 0; font-size: 18px;">Hubungi kami sekarang untuk konsultasi gratis dan penawaran terbaik</p>
+            <a href="https://wa.me/628974420966" class="whatsapp-button"><i class="fab fa-whatsapp"></i>WhatsApp: 0897-4420-966</a>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
+    <footer style="background: #333; color: white; padding: 40px 0; text-align: center;">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>CustomBox Premium</h3>
-                    <p>Spesialis pembuatan box custom dengan kualitas premium dan desain elegan. Melayani berbagai kebutuhan bisnis dengan fokus pada kepuasan pelanggan.</p>
-                </div>
-                <div class="footer-column">
-                    <h3>Kontak Kami</h3>
-                    <p><i class="fas fa-phone"></i> 0897-4420-966</p>
-                    <p><i class="fas fa-envelope"></i> info@customboxpremium.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</p>
-                </div>
-                <div class="footer-column">
-                    <h3>Layanan</h3>
-                    <a href="#florist">Box untuk Florist</a>
-                    <a href="#services">Box Retail</a>
-                    <a href="#services">Box Hadiah</a>
-                    <a href="#process">Cara Memesan</a>
-                </div>
-                <div class="footer-column">
-                    <h3>Ikuti Kami</h3>
-                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
-                    <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
-                    <a href="#"><i class="fab fa-tiktok"></i> TikTok</a>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2023 CustomBox Premium. All Rights Reserved.</p>
-            </div>
+            <p>&copy; 2023 CustomBox Premium. All Rights Reserved.</p>
+            <p style="margin-top: 10px; color: #ccc;">WhatsApp: 0897-4420-966</p>
         </div>
     </footer>
-
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // WhatsApp redirect with pre-filled message
-        document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
-            link.addEventListener('click', function(e) {
-                // You can customize the pre-filled message here
-                const message = "Halo, saya tertarik dengan layanan pembuatan box custom. Bisa konsultasi lebih lanjut?";
-                this.href = `https://wa.me/628974420966?text=${encodeURIComponent(message)}`;
-            });
-        });
-    </script>
 </body>
 </html>
